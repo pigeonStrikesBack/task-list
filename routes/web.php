@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index', [
+        'name' => 'Mauro',
+        'XSS' => '<b>Safe against cross site-scripting</b>',
+    ]);
 });
 
 Route::get('/xxx', fn() => ''
